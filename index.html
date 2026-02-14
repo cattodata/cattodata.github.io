@@ -1,11 +1,908 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=/cattoepub">
-    <title>cattodata</title>
+  <meta charset="UTF-8">
+  <title>cattodata - Data & AI Knowledge Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="cattodata 🐱📊 - เพจให้ความรู้ในด้าน Data & AI | Data Engineer in Sydney | คนไทยในออสเตรเลีย">
+  <link rel="icon" href="cattodata.png">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Kanit:wght@300;400;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', 'Kanit', sans-serif;
+      background: linear-gradient(135deg, #E8F4FF 0%, #D8EBFF 25%, #C8E2FF 50%, #B8D9FF 75%, #A8D0FF 100%);
+      min-height: 100vh;
+      color: #333;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #8BB8E8 0%, #6FA8DD 50%, #5599CC 100%);
+      padding: 60px 20px 50px;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(85, 153, 204, 0.35);
+      position: relative;
+      overflow: hidden;
+      z-index: 10;
+      border-radius: 0 0 24px 24px;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .logo-container {
+      margin-bottom: 25px;
+      animation: logoEntrance 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes logoEntrance {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, -50px, 0) scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+    }
+
+    .logo-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+      transition: transform 0.4s ease;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .logo-img:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    h1 {
+      font-family: 'Kanit', sans-serif;
+      color: white;
+      font-size: 3.5em;
+      font-weight: 800;
+      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+      margin-bottom: 12px;
+      letter-spacing: 4px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .subtitle {
+      color: rgba(255, 255, 255, 0.98);
+      font-size: 1.2em;
+      font-weight: 400;
+      margin-top: 8px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 50px 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* About Section */
+    .about-card {
+      background: white;
+      border-radius: 35px;
+      padding: 50px 45px;
+      margin-bottom: 50px;
+      box-shadow:
+        0 15px 60px rgba(85, 153, 204, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      animation: slideUp 0.8s ease-out;
+      border: 2px solid rgba(85, 153, 204, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(85, 153, 204, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .about-card h2 {
+      color: #3b82f6;
+      font-size: 2.5em;
+      margin-bottom: 25px;
+      font-weight: 800;
+      font-family: 'Kanit', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      position: relative;
+    }
+
+    .about-card h2::before {
+      content: '🐱';
+      font-size: 1.3em;
+    }
+
+    .about-card p {
+      color: #555;
+      line-height: 2;
+      font-size: 1.15em;
+      margin-bottom: 22px;
+      position: relative;
+    }
+
+    .about-card p strong {
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    .badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .badge {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      color: #2563eb;
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.92em;
+      font-weight: 600;
+      border: 1.5px solid rgba(59, 130, 246, 0.2);
+    }
+
+    /* Projects Section */
+    .topics-section {
+      margin-bottom: 50px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+      color: #2563eb;
+      font-size: 2.8em;
+      font-weight: 800;
+      font-family: 'Kanit', sans-serif;
+      margin-bottom: 15px;
+    }
+
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .topic-card {
+      background: white;
+      border-radius: 28px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(85, 153, 204, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      border: 2px solid rgba(85, 153, 204, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .topic-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      padding: 2px;
+      background: linear-gradient(135deg, #60a5fa, #38bdf8, #3b82f6);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .topic-card:hover::before {
+      opacity: 1;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 50px rgba(59, 130, 246, 0.2);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .topic-icon {
+      font-size: 4.5em;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .topic-card h3 {
+      background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 1.75em;
+      margin-bottom: 18px;
+      font-weight: 800;
+      font-family: 'Kanit', sans-serif;
+    }
+
+    .topic-card p {
+      color: #666;
+      font-size: 1.08em;
+      line-height: 1.8;
+    }
+
+    .coming-soon {
+      display: inline-block;
+      background: linear-gradient(135deg, #94a3b8, #64748b);
+      color: white;
+      padding: 5px 16px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      font-weight: 700;
+      margin-top: 12px;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 24px;
+      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1em;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+
+    .project-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    }
+
+    /* Skills Section */
+    .skills-card {
+      background: linear-gradient(135deg,
+          rgba(239, 246, 255, 0.95) 0%,
+          rgba(219, 234, 254, 0.95) 100%);
+      border-radius: 35px;
+      padding: 50px 45px;
+      margin-bottom: 50px;
+      box-shadow:
+        0 15px 60px rgba(59, 130, 246, 0.12),
+        0 0 0 1px rgba(255, 255, 255, 0.5);
+      border: 2px solid rgba(59, 130, 246, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skills-card::after {
+      content: '🐾';
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      font-size: 100px;
+      opacity: 0.06;
+      transform: rotate(-15deg);
+    }
+
+    .skills-card h2 {
+      background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 2.5em;
+      margin-bottom: 35px;
+      text-align: center;
+      font-weight: 800;
+      font-family: 'Kanit', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      position: relative;
+    }
+
+    .skills-card h2::before {
+      content: '🛠️';
+      font-size: 1.3em;
+      -webkit-text-fill-color: initial;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      position: relative;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.05em;
+      box-shadow:
+        0 6px 20px rgba(59, 130, 246, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background 0.3s ease;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-tag::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .skill-tag:hover::before {
+      left: 100%;
+    }
+
+    .skill-tag:hover {
+      transform: translateY(-5px) scale(1.08);
+      box-shadow:
+        0 10px 30px rgba(59, 130, 246, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      background: linear-gradient(135deg, #93bbfd 0%, #60a5fa 50%, #3b82f6 100%);
+    }
+
+    /* Contact Section */
+    .contact-card {
+      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
+      border-radius: 35px;
+      padding: 60px 50px;
+      text-align: center;
+      box-shadow:
+        0 15px 60px rgba(59, 130, 246, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      border: 3px solid rgba(255, 255, 255, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::before {
+      content: '🐱';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 2em;
+      opacity: 0.3;
+    }
+
+    .contact-card h2 {
+      color: white;
+      font-size: 2.8em;
+      margin-bottom: 18px;
+      font-weight: 800;
+      font-family: 'Kanit', sans-serif;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-card p {
+      color: rgba(255, 255, 255, 0.98);
+      font-size: 1.25em;
+      margin-bottom: 35px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+      position: relative;
+      z-index: 1;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.15em;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+      color: #2563eb;
+      border: 2px solid rgba(59, 130, 246, 0.2);
+    }
+
+    .social-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+      border-color: rgba(59, 130, 246, 0.4);
+    }
+
+    .social-icon {
+      font-size: 1.4em;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      background: rgba(255, 255, 255, 0.7);
+      border-top: 2px solid rgba(59, 130, 246, 0.1);
+      position: relative;
+      z-index: 10;
+    }
+
+    footer p {
+      margin: 10px 0;
+      color: #3b82f6;
+      font-size: 1.05em;
+      font-weight: 500;
+    }
+
+    .emoji-love {
+      display: inline-block;
+      animation: heartbeat 1.8s ease-in-out infinite;
+      color: #3b82f6;
+      filter: drop-shadow(0 2px 6px rgba(59, 130, 246, 0.3));
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      10%, 30% {
+        transform: scale(1.15);
+      }
+      20%, 40% {
+        transform: scale(0.95);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5em;
+        letter-spacing: 2px;
+      }
+
+      .subtitle {
+        font-size: 1em;
+      }
+
+      .logo-img {
+        width: 90px;
+        height: 90px;
+      }
+
+      .about-card,
+      .skills-card,
+      .contact-card {
+        padding: 35px 28px;
+      }
+
+      .about-card h2,
+      .skills-card h2,
+      .section-header h2 {
+        font-size: 2em;
+      }
+
+      .contact-card h2 {
+        font-size: 2.2em;
+      }
+
+      .topics-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .topic-card {
+        padding: 35px 25px;
+      }
+
+      .topic-icon {
+        font-size: 3.8em;
+      }
+
+      .badge-container {
+        justify-content: center;
+      }
+
+      .lang-btn {
+        top: 10px;
+        right: 10px;
+        padding: 10px 18px;
+        font-size: 0.8em;
+      }
+    }
+
+    .lang-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 12px 24px;
+      font-size: 0.9em;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1000;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .lang-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    }
+  </style>
 </head>
+
 <body>
-    <p>Redirecting to <a href="/cattoepub">CattoEPUB</a>...</p>
+
+  <button class="lang-btn" id="langBtn">EN</button>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <img src="cattodata.png" alt="cattodata" class="logo-img">
+    </div>
+
+    <h1>CATTODATA 🐱📊</h1>
+    <p class="subtitle">🇦🇺🇹🇭 เพจให้ความรู้ในด้าน Data & AI | Data Engineer in Sydney | คนไทยในออสเตรเลีย</p>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+
+    <!-- About Section -->
+    <section class="about-card">
+      <h2>ยินดีต้อนรับสู่ cattodata</h2>
+      <p>
+        แหล่งแบ่งปันความรู้และประสบการณ์
+        ในด้าน Data Engineer, AI และ Analytics จากคนไทยที่ทำงานในออสเตรเลีย
+      </p>
+      <p>
+        ปัจจุบันทำงานเป็น <strong>Data AI Engineer</strong> ในประเทศออสเตรเลีย
+        ดูแลการออกแบบ data platform บน Azure ตั้งแต่ data ingestion, ELT pipelines
+        ไปจนถึง lakehouse architecture และ AI-powered analytics
+      </p>
+      <p>
+        ประสบการณ์ <strong>Azure Data & AI Specialist</strong> ที่บริษัทเทคโนโลยีระดับโลก
+        ให้คำแนะนำด้าน data strategy, solution architecture และ AI roadmap
+        ให้กับลูกค้าองค์กรขนาดใหญ่ รวมถึงเคยเป็น <strong>ML Engineer</strong> และ
+        <strong>Analytics Architect</strong> ออกแบบและ migrate
+        Data Warehouse สู่ cloud
+      </p>
+      <p id="about-edu">
+        จบ <strong>M.Sc. (Data Science)</strong> จากมหาวิทยาลัยชั้นนำในยุโรป ด้วยทุนการศึกษาเต็มจำนวน
+        และ <strong>M.Sc.</strong> อีกใบด้าน NLP & Information Retrieval
+      </p>
+      <p id="about-writing">
+        มีประสบการณ์ด้าน <strong>Technical Writing</strong> มากกว่า 5 ปี
+        และเป็น <strong>2025 Microsoft Certified Trainer (MCT)</strong>
+        สอนและถ่ายทอดความรู้ด้าน Data & AI
+      </p>
+      <div class="badge-container">
+        <span class="badge">🏅 9x Azure Certified</span>
+        <span class="badge">🎓 Microsoft Certified Trainer</span>
+        <span class="badge">☁️ Azure & Multi-Cloud</span>
+        <span class="badge">🤖 AI & GenAI</span>
+        <span class="badge">📊 Data & Analytics</span>
+        <span class="badge">🌏 10+ Years Experience</span>
+        <span class="badge">🗣️ EN / TH / JP</span>
+      </div>
+
+      <h3 style="color:#2563eb;font-size:1.4em;margin-top:30px;margin-bottom:15px;font-family:'Kanit',sans-serif;">⭐ Top Skills</h3>
+      <div class="badge-container">
+        <span class="badge">Azure Data Engineering</span>
+        <span class="badge">Azure AI & AI Foundry</span>
+        <span class="badge">Solution Architecture</span>
+        <span class="badge">Data Platform Design</span>
+        <span class="badge">GenAI & LLM</span>
+        <span class="badge">Databricks</span>
+        <span class="badge">Microsoft Fabric</span>
+        <span class="badge">Technical Writer</span>
+        <span class="badge">Technical Trainer</span>
+      </div>
+
+    </section>
+
+    <!-- Projects Section -->
+    <section class="topics-section">
+      <div class="section-header">
+        <h2>🚀 Current Projects</h2>
+      </div>
+      <div class="topics-grid">
+
+        <div class="topic-card">
+          <span class="topic-icon">📖</span>
+          <h3>CattoEPUB</h3>
+          <p>
+            แปลง PDF เป็น EPUB ด้วย GenAI + Typhoon OCR รองรับภาษาไทยโดยเฉพาะ
+            ทำงานบนเบราว์เซอร์ ไม่ต้องติดตั้ง ไม่ส่งข้อมูลขึ้นเซิร์ฟเวอร์
+          </p>
+          <a href="https://cattodata.com/cattoepub" class="project-link">🔗 ลองใช้งาน</a>
+        </div>
+
+        <div class="topic-card">
+          <span class="topic-icon">🌐</span>
+          <h3>CattoTranslate</h3>
+          <p>
+            แปลหนังสือ PDF/EPUB ทั้งเล่มด้วย AI รองรับ EN↔TH
+            จัดรูปแบบสวย พร้อมอ่านเป็น EPUB ได้ทันที
+          </p>
+          <a href="https://cattodata.com/cattoepub/translate.html" class="project-link">🔗 ลองใช้งาน</a>
+        </div>
+
+        <div class="topic-card">
+          <span class="topic-icon">✈️</span>
+          <h3>CattoGo</h3>
+          <p>
+            AI-powered WebApp แนะนำการย้ายประเทศ วีซ่า ค่าใช้จ่าย
+            การใช้ชีวิตและหางานในต่างประเทศ จากประสบการณ์จริง
+          </p>
+          <span class="coming-soon">🔜 Coming Soon</span>
+        </div>
+
+        <div class="topic-card">
+          <span class="topic-icon">📝</span>
+          <h3>CattoBlog</h3>
+          <p>
+            แชร์ความรู้ด้าน Data Engineering, AI, Cloud
+            และประสบการณ์ทำงานในสาย Tech
+          </p>
+          <span class="coming-soon">🔜 Coming Soon</span>
+        </div>
+
+        <div class="topic-card">
+          <span class="topic-icon">🎯</span>
+          <h3>Career & Tips</h3>
+          <p>
+            เส้นทางอาชีพ Data Engineer, การเตรียมตัวสัมภาษณ์,
+            และประสบการณ์ทำงานในออสเตรเลีย
+          </p>
+          <span class="coming-soon">🔜 Coming Soon</span>
+        </div>
+
+        <div class="topic-card">
+          <span class="topic-icon">🎓</span>
+          <h3>CattoCourse</h3>
+          <p>
+            คอร์สสอน Data & AI จากประสบการณ์จริงในสาย Tech
+            เหมาะสำหรับคนที่อยากเริ่มต้นหรือ upskill
+          </p>
+          <span class="coming-soon">🔜 Coming Soon</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="about-card">
+      <h2 style="font-size:2.2em;">💼 Services</h2>
+      <p>
+        <strong>Technical Writing</strong> • <strong>Resume Review</strong> • <strong>IT Consulting</strong> • <strong>Training</strong> • <strong>Translation</strong> • <strong>Blogging</strong>
+      </p>
+      <p style="margin-top:15px;font-size:1.2em;">
+        🎯 <strong>รับปรึกษา & เตรียมสัมภาษณ์ Global Tech (Data & AI)</strong><br>
+        🌏 มีประสบการณ์ใช้ชีวิตและทำงานใน 4 ประเทศ (🇯🇵 ญี่ปุ่น, 🇮🇪 ไอร์แลนด์, 🇺🇸 อเมริกา, 🇦🇺 ออสเตรเลีย)<br>
+        สนใจติดต่อมาได้เลยผ่าน Email / Inbox X / Facebook
+      </p>
+      <div class="social-links" style="margin-top:20px;justify-content:flex-start;">
+        <a href="mailto:cattodata@gmail.com" class="social-btn" style="padding:12px 24px;font-size:1em;">📧 cattodata@gmail.com</a>
+        <a href="https://www.facebook.com/profile.php?id=61570184627763" target="_blank" class="social-btn" style="padding:12px 24px;font-size:1em;">📘 Facebook Inbox</a>
+        <a href="https://x.com/cattodata" target="_blank" class="social-btn" style="padding:12px 24px;font-size:1em;">𝕏 X DM</a>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-card">
+      <h2>เทคโนโลยีและเครื่องมือ</h2>
+      <div class="skills-container">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Databricks</span>
+        <span class="skill-tag">AWS</span>
+        <span class="skill-tag">Azure</span>
+        <span class="skill-tag">GCP</span>
+        <span class="skill-tag">Snowflake</span>
+        <span class="skill-tag">LangChain</span>
+        <span class="skill-tag">OpenAI</span>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="about-card" style="text-align:center;">
+      <h2 style="justify-content:center;">🏅 Microsoft Certifications</h2>
+      <div class="badge-container" style="justify-content:center;">
+        <span class="badge">DP-700: Implementing Data Engineering Solutions Using Microsoft Fabric</span>
+        <span class="badge">DP-203: Data Engineering on Microsoft Azure</span>
+        <span class="badge">AZ-305: Designing Microsoft Azure Infrastructure Solutions</span>
+        <span class="badge">DP-600: Implementing Analytics Solutions Using Microsoft Fabric</span>
+        <span class="badge">DP-100: Designing and Implementing a Data Science Solution on Azure</span>
+        <span class="badge">AI-102: Designing and Implementing a Microsoft Azure AI Solution</span>
+        <span class="badge">AI-900: Microsoft Azure AI Fundamentals</span>
+        <span class="badge">DP-900: Microsoft Azure Data Fundamentals</span>
+        <span class="badge">AZ-900: Microsoft Azure Fundamentals</span>
+        <span class="badge">Microsoft Certified: Azure Data Engineer Associate</span>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-card">
+      <h2>📬 ติดต่อและติดตาม</h2>
+      <p>พบกันได้ที่โซเชียลมีเดีย แชร์ความรู้กัน! ✨</p>
+      <div class="social-links">
+        <a href="mailto:cattodata@gmail.com" class="social-btn">
+          <span class="social-icon">📧</span> Email
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61570184627763" target="_blank" class="social-btn">
+          <span class="social-icon">📘</span> Facebook
+        </a>
+        <a href="https://github.com/cattodata" target="_blank" class="social-btn">
+          <span class="social-icon">🐙</span> GitHub
+        </a>
+        <a href="https://x.com/cattodata" target="_blank" class="social-btn">
+          <span class="social-icon">𝕏</span> X
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with <span class="emoji-love">💙</span> by cattodata</p>
+    <p>&copy; 2026 cattodata | Data & AI Knowledge Hub</p>
+    <p>🇦🇺 Sydney, Australia 🇹🇭</p>
+  </footer>
+
+  <script>
+    var lang='th';
+    var T={
+      subtitle:{th:'🇦🇺🇹🇭 เพจให้ความรู้ในด้าน Data & AI | Data Engineer in Sydney | คนไทยในออสเตรเลีย',en:'🇦🇺🇹🇭 Data & AI Knowledge Hub | Data Engineer in Sydney | Thai in Australia'},
+      aboutH:{th:'ยินดีต้อนรับสู่ cattodata',en:'Welcome to cattodata'},
+      aboutP1:{th:'แหล่งแบ่งปันความรู้และประสบการณ์ในด้าน Data Engineer, AI และ Analytics จากคนไทยที่ทำงานในออสเตรเลีย',en:'A knowledge-sharing platform for Data Engineering, AI, and Analytics — from a Thai professional working in Australia'},
+      aboutP2:{th:'ปัจจุบันทำงานเป็น <strong>Data AI Engineer</strong> ในประเทศออสเตรเลีย ดูแลการออกแบบ data platform บน Azure ตั้งแต่ data ingestion, ELT pipelines ไปจนถึง lakehouse architecture และ AI-powered analytics',en:'Currently working as a <strong>Data AI Engineer</strong> in Australia, designing data platforms on Azure from data ingestion, ELT pipelines to lakehouse architecture and AI-powered analytics'},
+      aboutP3:{th:'ประสบการณ์ <strong>Azure Data & AI Specialist</strong> ที่บริษัทเทคโนโลยีระดับโลก ให้คำแนะนำด้าน data strategy, solution architecture และ AI roadmap ให้กับลูกค้าองค์กรขนาดใหญ่ รวมถึงเคยเป็น <strong>ML Engineer</strong> และ <strong>Analytics Architect</strong> ออกแบบและ migrate Data Warehouse สู่ cloud',en:'Former <strong>Azure Data & AI Specialist</strong> at a global tech company, advising on data strategy, solution architecture, and AI roadmap for large enterprises. Also worked as <strong>ML Engineer</strong> and <strong>Analytics Architect</strong>, designing and migrating Data Warehouses to the cloud'},
+      aboutEdu:{th:'จบ <strong>M.Sc. (Data Science)</strong> จากมหาวิทยาลัยชั้นนำในยุโรป ด้วยทุนการศึกษาเต็มจำนวน และ <strong>M.Sc.</strong> อีกใบด้าน NLP & Information Retrieval',en:'Holds <strong>M.Sc. (Data Science)</strong> from a top European university on full scholarship, plus another <strong>M.Sc.</strong> in NLP & Information Retrieval'},
+      aboutWriting:{th:'มีประสบการณ์ด้าน <strong>Technical Writing</strong> มากกว่า 5 ปี และเป็น <strong>2025 Microsoft Certified Trainer (MCT)</strong> สอนและถ่ายทอดความรู้ด้าน Data & AI',en:'Over 5 years of experience as a <strong>Technical Writer</strong> and became a <strong>2025 Microsoft Certified Trainer (MCT)</strong>, teaching and sharing Data & AI knowledge'},
+      topSkills:{th:'⭐ Top Skills',en:'⭐ Top Skills'},
+      projectsH:{th:'🚀 Current Projects',en:'🚀 Current Projects'},
+      epubP:{th:'แปลง PDF เป็น EPUB ด้วย GenAI + Typhoon OCR รองรับภาษาไทยโดยเฉพาะ ทำงานบนเบราว์เซอร์ ไม่ต้องติดตั้ง ไม่ส่งข้อมูลขึ้นเซิร์ฟเวอร์',en:'Convert PDF to EPUB with GenAI + Typhoon OCR, optimized for Thai. Runs in browser — no installation, no data sent to servers'},
+      transP:{th:'แปลหนังสือ PDF/EPUB ทั้งเล่มด้วย AI รองรับ EN↔TH จัดรูปแบบสวย พร้อมอ่านเป็น EPUB ได้ทันที',en:'Translate entire PDF/EPUB books with AI. Supports EN↔TH, beautifully formatted, ready to read as EPUB'},
+      goP:{th:'AI-powered WebApp แนะนำการย้ายประเทศ วีซ่า ค่าใช้จ่าย การใช้ชีวิตและหางานในต่างประเทศ จากประสบการณ์จริง',en:'AI-powered WebApp for relocation guidance — visas, costs, living and job hunting abroad from real experience'},
+      blogP:{th:'แชร์ความรู้ด้าน Data Engineering, AI, Cloud และประสบการณ์ทำงานในสาย Tech',en:'Sharing knowledge on Data Engineering, AI, Cloud, and Tech career experiences'},
+      careerP:{th:'เส้นทางอาชีพ Data Engineer, การเตรียมตัวสัมภาษณ์, และประสบการณ์ทำงานในออสเตรเลีย',en:'Data Engineer career paths, interview prep, and work experience in Australia'},
+      courseP:{th:'คอร์สสอน Data & AI จากประสบการณ์จริงในสาย Tech เหมาะสำหรับคนที่อยากเริ่มต้นหรือ upskill',en:'Data & AI courses from real Tech experience — perfect for beginners or upskilling'},
+      servicesH:{th:'💼 Services',en:'💼 Services'},
+      servicesP2:{th:'🎯 <strong>รับปรึกษา & เตรียมสัมภาษณ์ Global Tech (Data & AI)</strong><br>🌏 มีประสบการณ์ใช้ชีวิตและทำงานใน 4 ประเทศ (🇯🇵 ญี่ปุ่น, 🇮🇪 ไอร์แลนด์, 🇺🇸 อเมริกา, 🇦🇺 ออสเตรเลีย)<br>สนใจติดต่อมาได้เลยผ่าน Email / Inbox X / Facebook',en:'🎯 <strong>Global Tech Consulting & Interview Prep (Data & AI)</strong><br>🌏 Experience living and working in 4 countries (🇯🇵 Japan, 🇮🇪 Ireland, 🇺🇸 USA, 🇦🇺 Australia)<br>Feel free to reach out via Email / X DM / Facebook'},
+      tryIt:{th:'🔗 ลองใช้งาน',en:'🔗 Try it out'},
+      comingSoon:{th:'🔜 Coming Soon',en:'🔜 Coming Soon'},
+      skillsH:{th:'เทคโนโลยีและเครื่องมือ',en:'Technologies & Tools'},
+      contactH:{th:'📬 ติดต่อและติดตาม',en:'📬 Connect & Follow'},
+      contactP:{th:'พบกันได้ที่โซเชียลมีเดีย แชร์ความรู้กัน! ✨',en:'Connect on social media — let\'s share knowledge! ✨'}
+    };
+    function setLang(l){
+      lang=l;
+      document.getElementById('langBtn').textContent=l==='th'?'EN':'TH';
+      document.querySelector('.subtitle').innerHTML=T.subtitle[l];
+      var aboutCard=document.querySelectorAll('.about-card');
+      // About section
+      var ac=aboutCard[0];
+      ac.querySelector('h2').innerHTML=T.aboutH[l];
+      var ps=ac.querySelectorAll('p');
+      ps[0].innerHTML=T.aboutP1[l];
+      ps[1].innerHTML=T.aboutP2[l];
+      ps[2].innerHTML=T.aboutP3[l];
+      document.getElementById('about-edu').innerHTML=T.aboutEdu[l];
+      document.getElementById('about-writing').innerHTML=T.aboutWriting[l];
+      ac.querySelector('h3').innerHTML=T.topSkills[l];
+      // Projects
+      document.querySelector('.section-header h2').innerHTML=T.projectsH[l];
+      var cards=document.querySelectorAll('.topic-card');
+      var pTexts=[T.epubP,T.transP,T.goP,T.blogP,T.careerP,T.courseP];
+      cards.forEach(function(c,i){if(pTexts[i])c.querySelector('p').innerHTML=pTexts[i][l]});
+      document.querySelectorAll('.project-link').forEach(function(a){a.textContent=T.tryIt[l]});
+      document.querySelectorAll('.coming-soon').forEach(function(s){s.textContent=T.comingSoon[l]});
+      // Services
+      var svc=aboutCard[1];
+      svc.querySelector('h2').innerHTML=T.servicesH[l];
+      svc.querySelectorAll('p')[1].innerHTML=T.servicesP2[l];
+      // Skills
+      document.querySelector('.skills-card h2').innerHTML=T.skillsH[l];
+      // Certs h2 — keep same
+      // Contact
+      document.querySelector('.contact-card h2').innerHTML=T.contactH[l];
+      document.querySelector('.contact-card p').innerHTML=T.contactP[l];
+      localStorage.setItem('cattoLang',l);
+    }
+    document.getElementById('langBtn').onclick=function(){setLang(lang==='th'?'en':'th')};
+    var saved=localStorage.getItem('cattoLang');
+    if(saved&&saved!=='th')setLang(saved);
+  </script>
+
 </body>
+
 </html>
