@@ -201,6 +201,50 @@
       font-weight: 700;
     }
 
+    .about-subsection {
+      background: linear-gradient(135deg, rgba(239, 246, 255, 0.4) 0%, rgba(219, 234, 254, 0.4) 100%);
+      border-left: 4px solid #3b82f6;
+      padding: 20px 25px;
+      margin: 25px 0;
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .about-subsection h3 {
+      color: #2563eb;
+      font-size: 1.35em;
+      font-weight: 700;
+      font-family: 'Kanit', sans-serif;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .about-subsection p {
+      margin-bottom: 12px;
+      line-height: 1.9;
+    }
+
+    .about-subsection p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 2-Column Grid for About Subsections */
+    .about-subsection-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin: 25px 0;
+    }
+
+    @media (max-width: 968px) {
+      .about-subsection-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
     .badge-container {
       display: flex;
       flex-wrap: wrap;
@@ -633,6 +677,21 @@
         padding: 7px 15px;
       }
 
+      .about-subsection {
+        padding: 16px 18px;
+        margin: 18px 0;
+      }
+
+      .about-subsection h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      .about-subsection p {
+        font-size: 0.98em;
+        line-height: 1.75;
+      }
+
       .skill-tag {
         font-size: 0.92em;
         padding: 11px 22px;
@@ -752,6 +811,24 @@
         padding: 6px 13px;
       }
 
+      .about-subsection {
+        padding: 14px 16px;
+        margin: 15px 0;
+        border-left-width: 3px;
+      }
+
+      .about-subsection h3 {
+        font-size: 1.1em;
+        margin-bottom: 8px;
+        gap: 8px;
+      }
+
+      .about-subsection p {
+        font-size: 0.88em;
+        line-height: 1.65;
+        margin-bottom: 10px;
+      }
+
       .skill-tag {
         font-size: 0.85em;
         padding: 10px 18px;
@@ -829,63 +906,19 @@
     </div>
 
     <h1>CATTODATA 🐱📊</h1>
-    <p class="subtitle">🇦🇺🇹🇭 เพจให้ความรู้ในด้าน Data & AI | Data Engineer in Sydney | คนไทยในออสเตรเลีย</p>
+    <p class="subtitle">🇦🇺🇹🇭 Data & AI Knowledge Hub — แชร์ประสบการณ์จริงด้าน Data Engineering, AI Architecture และการทำงานใน Global Tech จาก Sydney, Australia</p>
   </header>
 
   <!-- Main Container -->
   <div class="container">
 
-    <!-- About Section -->
-    <section class="about-card">
-      <h2>ยินดีต้อนรับสู่ cattodata</h2>
-      <p>
-        แหล่งแบ่งปันความรู้และประสบการณ์
-        ในด้าน Data Engineer, AI และ Analytics จากคนไทยที่ทำงานในออสเตรเลีย
+    <!-- Welcome Section -->
+    <section class="about-card" style="text-align:center;padding:40px 35px;">
+      <h2 style="justify-content:center;">ยินดีต้อนรับสู่ cattodata</h2>
+      <p style="font-size:1.15em;color:#555;line-height:2;margin-top:15px;">
+        แพลตฟอร์มที่รวบรวมความรู้ ประสบการณ์ และเครื่องมือด้าน Data Engineering และ AI<br>
+        พร้อมแชร์เส้นทางการทำงานจริงในสาย Tech ต่างประเทศ — ตั้งแต่การสร้าง data platform ไปจนถึงการออกแบบ AI solutions ระดับองค์กร
       </p>
-      <p>
-        ปัจจุบันทำงานเป็น <strong>Data AI Engineer</strong> ในประเทศออสเตรเลีย
-        ดูแลการออกแบบ data platform บน Azure ตั้งแต่ data ingestion, ELT pipelines
-        ไปจนถึง lakehouse architecture และ AI-powered analytics
-      </p>
-      <p>
-        ประสบการณ์ <strong>Azure Data & AI Specialist</strong> ที่บริษัทเทคโนโลยีระดับโลก
-        ให้คำแนะนำด้าน data strategy, solution architecture และ AI roadmap
-        ให้กับลูกค้าองค์กรขนาดใหญ่ รวมถึงเคยเป็น <strong>ML Engineer</strong> และ
-        <strong>Analytics Architect</strong> ออกแบบและ migrate
-        Data Warehouse สู่ cloud
-      </p>
-      <p id="about-edu">
-        จบ <strong>M.Sc. (Data Science)</strong> จากมหาวิทยาลัยชั้นนำในยุโรป ด้วยทุนการศึกษาเต็มจำนวน
-        และ <strong>M.Sc.</strong> อีกใบด้าน NLP & Information Retrieval
-      </p>
-      <p id="about-writing">
-        มีประสบการณ์ด้าน <strong>Technical Writing</strong> มากกว่า 5 ปี
-        และเป็น <strong>2025 Microsoft Certified Trainer (MCT)</strong>
-        สอนและถ่ายทอดความรู้ด้าน Data & AI
-      </p>
-      <div class="badge-container">
-        <span class="badge">🏅 9x Azure Certified</span>
-        <span class="badge">🎓 Microsoft Certified Trainer</span>
-        <span class="badge">☁️ Azure & Multi-Cloud</span>
-        <span class="badge">🤖 AI & GenAI</span>
-        <span class="badge">📊 Data & Analytics</span>
-        <span class="badge">🌏 10+ Years Experience</span>
-        <span class="badge">🗣️ EN / TH / JP</span>
-      </div>
-
-      <h3 style="color:#2563eb;font-size:1.4em;margin-top:30px;margin-bottom:15px;font-family:'Kanit',sans-serif;">⭐ Top Skills</h3>
-      <div class="badge-container">
-        <span class="badge">Azure Data Engineering</span>
-        <span class="badge">Azure AI & AI Foundry</span>
-        <span class="badge">Solution Architecture</span>
-        <span class="badge">Data Platform Design</span>
-        <span class="badge">GenAI & LLM</span>
-        <span class="badge">Databricks</span>
-        <span class="badge">Microsoft Fabric</span>
-        <span class="badge">Technical Writer</span>
-        <span class="badge">Technical Trainer</span>
-      </div>
-
     </section>
 
     <!-- Projects Section -->
@@ -899,8 +932,8 @@
           <span class="topic-icon">📖</span>
           <h3>CattoEPUB</h3>
           <p>
-            แปลง PDF เป็น EPUB ด้วย GenAI + Typhoon OCR รองรับภาษาไทยโดยเฉพาะ
-            ทำงานบนเบราว์เซอร์ ไม่ต้องติดตั้ง ไม่ส่งข้อมูลขึ้นเซิร์ฟเวอร์
+            <strong>Convert complex Thai PDFs into clean, readable EPUBs using AI-powered OCR</strong><br>
+            แปลง PDF เป็น EPUB ด้วย GenAI + Typhoon OCR รองรับภาษาไทยโดยเฉพาะ ทำงานบนเบราว์เซอร์ ไม่ต้องติดตั้ง ไม่ส่งข้อมูลขึ้นเซิร์ฟเวอร์
           </p>
           <a href="https://cattodata.com/cattoepub" class="project-link">🔗 ลองใช้งาน</a>
         </div>
@@ -909,8 +942,8 @@
           <span class="topic-icon">🌐</span>
           <h3>CattoTranslate</h3>
           <p>
-            แปลหนังสือ PDF/EPUB ทั้งเล่มด้วย AI รองรับ EN↔TH
-            จัดรูปแบบสวย พร้อมอ่านเป็น EPUB ได้ทันที
+            <strong>Translate entire books while preserving layout and formatting</strong><br>
+            แปลหนังสือ PDF/EPUB ทั้งเล่มด้วย AI รองรับ EN↔TH จัดรูปแบบสวย พร้อมอ่านเป็น EPUB ได้ทันที
           </p>
           <a href="https://cattodata.com/cattoepub/translate.html" class="project-link">🔗 ลองใช้งาน</a>
         </div>
@@ -919,8 +952,8 @@
           <span class="topic-icon">✈️</span>
           <h3>CattoGo</h3>
           <p>
-            AI-powered WebApp แนะนำการย้ายประเทศ วีซ่า ค่าใช้จ่าย
-            การใช้ชีวิตและหางานในต่างประเทศ จากประสบการณ์จริง
+            <strong>AI-powered relocation WebApp designed for Tech professionals</strong><br>
+            เว็บแนะนำการย้ายประเทศ วีซ่า ค่าใช้จ่าย การใช้ชีวิตและหางานในต่างประเทศ จากประสบการณ์จริง
           </p>
           <span class="coming-soon">🔜 Coming Soon</span>
         </div>
@@ -958,21 +991,131 @@
       </div>
     </section>
 
+    <!-- About Us Section -->
+    <section class="about-card">
+      <h2>เกี่ยวกับเรา</h2>
+
+      <div class="about-subsection-grid">
+        <div>
+          <div class="about-subsection">
+            <h3><span>👨‍💼</span> Current Role</h3>
+            <p id="about-current">
+              ปัจจุบันทำงานเป็น <strong>Data AI Engineer</strong> ในประเทศออสเตรเลีย
+              ดูแลการออกแบบ data platform บน Azure ตั้งแต่ data ingestion, ELT pipelines
+              ไปจนถึง lakehouse architecture และ AI-powered analytics
+            </p>
+          </div>
+
+          <div class="about-subsection">
+            <h3><span>💼</span> Experience</h3>
+            <p id="about-exp">
+              ประสบการณ์ <strong>Azure Data & AI Specialist</strong> ที่บริษัทเทคโนโลยีระดับโลก
+              ให้คำแนะนำด้าน data strategy, solution architecture และ AI roadmap
+              ให้กับลูกค้าองค์กรขนาดใหญ่ รวมถึงเคยเป็น <strong>ML Engineer</strong> และ
+              <strong>Analytics Architect</strong> ออกแบบและ migrate Data Warehouse สู่ cloud
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="about-subsection">
+            <h3><span>🎓</span> Education</h3>
+            <p id="about-edu">
+              จบ <strong>M.Sc. (Data Science)</strong> จากมหาวิทยาลัยชั้นนำในยุโรป ด้วยทุนการศึกษาเต็มจำนวน
+              และ <strong>M.Sc.</strong> อีกใบด้าน NLP & Information Retrieval
+            </p>
+          </div>
+
+          <div class="about-subsection">
+            <h3><span>✍️</span> Teaching & Writing</h3>
+            <p id="about-writing">
+              มีประสบการณ์ด้าน <strong>Technical Writing</strong> มากกว่า 5 ปี
+              และเป็น <strong>2025 Microsoft Certified Trainer (MCT)</strong>
+              สอนและถ่ายทอดความรู้ด้าน Data & AI
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="badge-container">
+        <span class="badge">🏅 9x Azure Certified</span>
+        <span class="badge">🎓 Microsoft Certified Trainer</span>
+        <span class="badge">☁️ Azure & Multi-Cloud</span>
+        <span class="badge">🤖 AI & GenAI</span>
+        <span class="badge">📊 Data & Analytics</span>
+        <span class="badge">🌏 10+ Years Experience</span>
+        <span class="badge">🗣️ EN / TH / JP</span>
+      </div>
+
+      <h3 style="color:#2563eb;font-size:1.4em;margin-top:30px;margin-bottom:15px;font-family:'Kanit',sans-serif;">⭐ Top Skills</h3>
+      <div class="badge-container">
+        <span class="badge">Azure Data Engineering</span>
+        <span class="badge">Azure AI & AI Foundry</span>
+        <span class="badge">Solution Architecture</span>
+        <span class="badge">Data Platform Design</span>
+        <span class="badge">GenAI & LLM</span>
+        <span class="badge">Databricks</span>
+        <span class="badge">Microsoft Fabric</span>
+        <span class="badge">Technical Writer</span>
+        <span class="badge">Technical Trainer</span>
+      </div>
+
+      <h3 style="color:#2563eb;font-size:1.4em;margin-top:30px;margin-bottom:15px;font-family:'Kanit',sans-serif;">🏅 Microsoft Certifications</h3>
+      <div class="badge-container" style="justify-content:center;">
+        <span class="badge">🏅 9x Azure Certified</span>
+        <span class="badge">🎓 2025 Microsoft Certified Trainer (MCT)</span>
+        <span class="badge">DP-700: Fabric Data Engineering</span>
+        <span class="badge">DP-203: Azure Data Engineering</span>
+        <span class="badge">AZ-305: Azure Infrastructure Solutions</span>
+        <span class="badge">DP-600: Fabric Analytics Solutions</span>
+        <span class="badge">DP-100: Azure Data Science</span>
+        <span class="badge">AI-102: Azure AI Solution</span>
+        <span class="badge">Azure Data Engineer Associate</span>
+      </div>
+
+      <p style="margin-top:25px;font-size:1.05em;color:#555;text-align:center;">
+        🌏 มีประสบการณ์ใช้ชีวิตและทำงานใน 4 ประเทศ (🇯🇵 ญี่ปุ่น, 🇮🇪 ไอร์แลนด์, 🇺🇸 อเมริกา, 🇦🇺 ออสเตรเลีย)<br>
+        สนใจติดต่อมาได้เลยผ่าน Email / Facebook Inbox / X DM
+      </p>
+
+      <div class="social-links" style="margin-top:20px;justify-content:center;">
+        <a href="mailto:cattodata@gmail.com" class="social-btn" style="padding:12px 24px;font-size:0.95em;">📧 Email</a>
+        <a href="https://www.facebook.com/profile.php?id=61570184627763" target="_blank" class="social-btn" style="padding:12px 24px;font-size:0.95em;">📘 Facebook</a>
+        <a href="https://x.com/cattodata" target="_blank" class="social-btn" style="padding:12px 24px;font-size:0.95em;">𝕏 X</a>
+      </div>
+
+    </section>
+
     <!-- Services Section -->
     <section class="about-card">
       <h2 style="font-size:2.2em;">💼 Services</h2>
-      <p>
-        <strong>Technical Writing</strong> • <strong>Resume Review</strong> • <strong>IT Consulting</strong> • <strong>Training</strong> • <strong>Translation</strong> • <strong>Blogging</strong>
+      
+      <div class="about-subsection" style="margin:20px 0;">
+        <h3><span>📝</span> Resume Review for Global Data & AI Roles</h3>
+        <p>ช่วยปรับ Resume สำหรับสาย Data & AI ให้ผ่าน ATS และตรงกับสิ่งที่ hiring manager ใน Global Tech มองหา — พร้อมคำแนะนำเชิงกลยุทธ์ในการนำเสนอประสบการณ์</p>
+      </div>
+
+      <div class="about-subsection" style="margin:20px 0;">
+        <h3><span>🎯</span> Interview Coaching & Career Consulting</h3>
+        <p>เตรียมตัวสัมภาษณ์สาย Data & AI ด้วย real-world scenarios จากประสบการณ์ทำงานและ hiring ในองค์กรระดับโลกหลายประเทศ</p>
+      </div>
+
+      <div class="about-subsection" style="margin:20px 0;">
+        <h3><span>🎓</span> Data & AI Courses (Coming Soon)</h3>
+        <p>คอร์สเรียนด้าน Data Engineering และ AI ที่ออกแบบจากประสบการณ์ทำงานจริงใน Global Tech เน้น practical skills ที่ใช้ได้จริง — ตั้งแต่การออกแบบ data platform ไปจนถึงการทำงานกับ AI ในระดับ production</p>
+      </div>
+
+      <p style="margin-top:25px;font-size:1.05em;text-align:center;color:#2563eb;font-weight:600;">
+        🌏 มีประสบการณ์ใช้ชีวิตและทำงานใน 4 ประเทศ — เข้าใจทั้ง culture และ expectation ของแต่ละที่
       </p>
-      <p style="margin-top:15px;font-size:1.2em;">
-        🎯 <strong>รับปรึกษา & เตรียมสัมภาษณ์ Global Tech (Data & AI)</strong><br>
-        🌏 มีประสบการณ์ใช้ชีวิตและทำงานใน 4 ประเทศ (🇯🇵 ญี่ปุ่น, 🇮🇪 ไอร์แลนด์, 🇺🇸 อเมริกา, 🇦🇺 ออสเตรเลีย)<br>
-        สนใจติดต่อมาได้เลยผ่าน Email / Inbox X / Facebook
-      </p>
-      <div class="social-links" style="margin-top:20px;justify-content:flex-start;">
-        <a href="mailto:cattodata@gmail.com" class="social-btn" style="padding:12px 24px;font-size:1em;">📧 cattodata@gmail.com</a>
-        <a href="https://www.facebook.com/profile.php?id=61570184627763" target="_blank" class="social-btn" style="padding:12px 24px;font-size:1em;">📘 Facebook Inbox</a>
-        <a href="https://x.com/cattodata" target="_blank" class="social-btn" style="padding:12px 24px;font-size:1em;">𝕏 X DM</a>
+      <div style="text-align:center;margin-top:30px;padding:25px;background:linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);border-radius:20px;">
+        <p style="font-size:1.15em;font-weight:700;color:#2563eb;margin-bottom:15px;">📬 ติดต่อและปรึกษา</p>
+        <p style="margin-bottom:20px;color:#555;">สนใจปรึกษาหรือติดตามเนื้อหา — ติดต่อมาได้เลย</p>
+        <div class="social-links" style="justify-content:center;flex-wrap:wrap;">
+          <a href="mailto:cattodata@gmail.com" class="social-btn" style="padding:12px 24px;font-size:0.95em;">📧 Email</a>
+          <a href="https://www.facebook.com/profile.php?id=61570184627763" target="_blank" class="social-btn" style="padding:12px 24px;font-size:0.95em;">📘 Facebook</a>
+          <a href="https://x.com/cattodata" target="_blank" class="social-btn" style="padding:12px 24px;font-size:0.95em;">𝕏 Follow</a>
+        </div>
       </div>
     </section>
 
@@ -989,23 +1132,6 @@
         <span class="skill-tag">Snowflake</span>
         <span class="skill-tag">LangChain</span>
         <span class="skill-tag">OpenAI</span>
-      </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section class="about-card" style="text-align:center;">
-      <h2 style="justify-content:center;">🏅 Microsoft Certifications</h2>
-      <div class="badge-container" style="justify-content:center;">
-        <span class="badge">DP-700: Implementing Data Engineering Solutions Using Microsoft Fabric</span>
-        <span class="badge">DP-203: Data Engineering on Microsoft Azure</span>
-        <span class="badge">AZ-305: Designing Microsoft Azure Infrastructure Solutions</span>
-        <span class="badge">DP-600: Implementing Analytics Solutions Using Microsoft Fabric</span>
-        <span class="badge">DP-100: Designing and Implementing a Data Science Solution on Azure</span>
-        <span class="badge">AI-102: Designing and Implementing a Microsoft Azure AI Solution</span>
-        <span class="badge">AI-900: Microsoft Azure AI Fundamentals</span>
-        <span class="badge">DP-900: Microsoft Azure Data Fundamentals</span>
-        <span class="badge">AZ-900: Microsoft Azure Fundamentals</span>
-        <span class="badge">Microsoft Certified: Azure Data Engineer Associate</span>
       </div>
     </section>
 
@@ -1044,23 +1170,25 @@
   <script>
     var lang='th';
     var T={
-      subtitle:{th:'🇦🇺🇹🇭 เพจให้ความรู้ในด้าน Data & AI | Data Engineer in Sydney | คนไทยในออสเตรเลีย',en:'🇦🇺🇹🇭 Data & AI Knowledge Hub | Data Engineer in Sydney | Thai in Australia'},
-      aboutH:{th:'ยินดีต้อนรับสู่ cattodata',en:'Welcome to cattodata'},
-      aboutP1:{th:'แหล่งแบ่งปันความรู้และประสบการณ์ในด้าน Data Engineer, AI และ Analytics จากคนไทยที่ทำงานในออสเตรเลีย',en:'A knowledge-sharing platform for Data Engineering, AI, and Analytics — from a Thai professional working in Australia'},
-      aboutP2:{th:'ปัจจุบันทำงานเป็น <strong>Data AI Engineer</strong> ในประเทศออสเตรเลีย ดูแลการออกแบบ data platform บน Azure ตั้งแต่ data ingestion, ELT pipelines ไปจนถึง lakehouse architecture และ AI-powered analytics',en:'Currently working as a <strong>Data AI Engineer</strong> in Australia, designing data platforms on Azure from data ingestion, ELT pipelines to lakehouse architecture and AI-powered analytics'},
-      aboutP3:{th:'ประสบการณ์ <strong>Azure Data & AI Specialist</strong> ที่บริษัทเทคโนโลยีระดับโลก ให้คำแนะนำด้าน data strategy, solution architecture และ AI roadmap ให้กับลูกค้าองค์กรขนาดใหญ่ รวมถึงเคยเป็น <strong>ML Engineer</strong> และ <strong>Analytics Architect</strong> ออกแบบและ migrate Data Warehouse สู่ cloud',en:'Former <strong>Azure Data & AI Specialist</strong> at a global tech company, advising on data strategy, solution architecture, and AI roadmap for large enterprises. Also worked as <strong>ML Engineer</strong> and <strong>Analytics Architect</strong>, designing and migrating Data Warehouses to the cloud'},
+      subtitle:{th:'🇦🇺🇹🇭 Data & AI Knowledge Hub — แชร์ประสบการณ์จริงด้าน Data Engineering, AI Architecture และการทำงานใน Global Tech จาก Sydney, Australia',en:'🇦🇺🇹🇭 Data & AI Knowledge Hub — sharing real experience in Data Engineering, AI Architecture, and Global Tech careers from Sydney, Australia'},
+      welcomeH:{th:'ยินดีต้อนรับสู่ cattodata',en:'Welcome to cattodata'},
+      welcomeP:{th:'แพลตฟอร์มที่รวบรวมความรู้ ประสบการณ์ และเครื่องมือด้าน Data Engineering และ AI<br>พร้อมแชร์เส้นทางการทำงานจริงในสาย Tech ต่างประเทศ — ตั้งแต่การสร้าง data platform ไปจนถึงการออกแบบ AI solutions ระดับองค์กร',en:'A platform featuring knowledge, experience, and tools for Data Engineering and AI<br>Sharing real career paths in global Tech — from building data platforms to designing enterprise-level AI solutions'},
+      aboutUsH:{th:'เกี่ยวกับเรา',en:'About Us'},
+      aboutCurrent:{th:'ปัจจุบันทำงานเป็น <strong>Data AI Engineer</strong> ในประเทศออสเตรเลีย ดูแลการออกแบบ data platform บน Azure ตั้งแต่ data ingestion, ELT pipelines ไปจนถึง lakehouse architecture และ AI-powered analytics',en:'Currently working as a <strong>Data AI Engineer</strong> in Australia, designing data platforms on Azure from data ingestion, ELT pipelines to lakehouse architecture and AI-powered analytics'},
+      aboutExp:{th:'ประสบการณ์ <strong>Azure Data & AI Specialist</strong> ที่บริษัทเทคโนโลยีระดับโลก ให้คำแนะนำด้าน data strategy, solution architecture และ AI roadmap ให้กับลูกค้าองค์กรขนาดใหญ่ รวมถึงเคยเป็น <strong>ML Engineer</strong> และ <strong>Analytics Architect</strong> ออกแบบและ migrate Data Warehouse สู่ cloud',en:'Former <strong>Azure Data & AI Specialist</strong> at a global tech company, advising on data strategy, solution architecture, and AI roadmap for large enterprises. Also worked as <strong>ML Engineer</strong> and <strong>Analytics Architect</strong>, designing and migrating Data Warehouses to the cloud'},
       aboutEdu:{th:'จบ <strong>M.Sc. (Data Science)</strong> จากมหาวิทยาลัยชั้นนำในยุโรป ด้วยทุนการศึกษาเต็มจำนวน และ <strong>M.Sc.</strong> อีกใบด้าน NLP & Information Retrieval',en:'Holds <strong>M.Sc. (Data Science)</strong> from a top European university on full scholarship, plus another <strong>M.Sc.</strong> in NLP & Information Retrieval'},
       aboutWriting:{th:'มีประสบการณ์ด้าน <strong>Technical Writing</strong> มากกว่า 5 ปี และเป็น <strong>2025 Microsoft Certified Trainer (MCT)</strong> สอนและถ่ายทอดความรู้ด้าน Data & AI',en:'Over 5 years of experience as a <strong>Technical Writer</strong> and became a <strong>2025 Microsoft Certified Trainer (MCT)</strong>, teaching and sharing Data & AI knowledge'},
       topSkills:{th:'⭐ Top Skills',en:'⭐ Top Skills'},
       projectsH:{th:'🚀 Current Projects',en:'🚀 Current Projects'},
-      epubP:{th:'แปลง PDF เป็น EPUB ด้วย GenAI + Typhoon OCR รองรับภาษาไทยโดยเฉพาะ ทำงานบนเบราว์เซอร์ ไม่ต้องติดตั้ง ไม่ส่งข้อมูลขึ้นเซิร์ฟเวอร์',en:'Convert PDF to EPUB with GenAI + Typhoon OCR, optimized for Thai. Runs in browser — no installation, no data sent to servers'},
-      transP:{th:'แปลหนังสือ PDF/EPUB ทั้งเล่มด้วย AI รองรับ EN↔TH จัดรูปแบบสวย พร้อมอ่านเป็น EPUB ได้ทันที',en:'Translate entire PDF/EPUB books with AI. Supports EN↔TH, beautifully formatted, ready to read as EPUB'},
-      goP:{th:'AI-powered WebApp แนะนำการย้ายประเทศ วีซ่า ค่าใช้จ่าย การใช้ชีวิตและหางานในต่างประเทศ จากประสบการณ์จริง',en:'AI-powered WebApp for relocation guidance — visas, costs, living and job hunting abroad from real experience'},
+      epubP:{th:'<strong>Convert complex Thai PDFs into clean, readable EPUBs using AI-powered OCR</strong><br>แปลง PDF เป็น EPUB ด้วย GenAI + Typhoon OCR รองรับภาษาไทยโดยเฉพาะ ทำงานบนเบราว์เซอร์ ไม่ต้องติดตั้ง ไม่ส่งข้อมูลขึ้นเซิร์ฟเวอร์',en:'<strong>Convert complex Thai PDFs into clean, readable EPUBs using AI-powered OCR</strong><br>Convert PDF to EPUB with GenAI + Typhoon OCR, optimized for Thai. Runs in browser — no installation, no data sent to servers'},
+      transP:{th:'<strong>Translate entire books while preserving layout and formatting</strong><br>แปลหนังสือ PDF/EPUB ทั้งเล่มด้วย AI รองรับ EN↔TH จัดรูปแบบสวย พร้อมอ่านเป็น EPUB ได้ทันที',en:'<strong>Translate entire books while preserving layout and formatting</strong><br>Translate entire PDF/EPUB books with AI. Supports EN↔TH, beautifully formatted, ready to read as EPUB'},
+      goP:{th:'<strong>AI-powered relocation WebApp designed for Tech professionals</strong><br>เว็บแนะนำการย้ายประเทศ วีซ่า ค่าใช้จ่าย การใช้ชีวิตและหางานในต่างประเทศ จากประสบการณ์จริง',en:'<strong>AI-powered relocation WebApp designed for Tech professionals</strong><br>WebApp for relocation guidance — visas, costs, living and job hunting abroad from real experience'},
       blogP:{th:'แชร์ความรู้ด้าน Data Engineering, AI, Cloud และประสบการณ์ทำงานในสาย Tech',en:'Sharing knowledge on Data Engineering, AI, Cloud, and Tech career experiences'},
       careerP:{th:'เส้นทางอาชีพ Data Engineer, การเตรียมตัวสัมภาษณ์, และประสบการณ์ทำงานในออสเตรเลีย',en:'Data Engineer career paths, interview prep, and work experience in Australia'},
       courseP:{th:'คอร์สสอน Data & AI จากประสบการณ์จริงในสาย Tech เหมาะสำหรับคนที่อยากเริ่มต้นหรือ upskill',en:'Data & AI courses from real Tech experience — perfect for beginners or upskilling'},
       servicesH:{th:'💼 Services',en:'💼 Services'},
-      servicesP2:{th:'🎯 <strong>รับปรึกษา & เตรียมสัมภาษณ์ Global Tech (Data & AI)</strong><br>🌏 มีประสบการณ์ใช้ชีวิตและทำงานใน 4 ประเทศ (🇯🇵 ญี่ปุ่น, 🇮🇪 ไอร์แลนด์, 🇺🇸 อเมริกา, 🇦🇺 ออสเตรเลีย)<br>สนใจติดต่อมาได้เลยผ่าน Email / Inbox X / Facebook',en:'🎯 <strong>Global Tech Consulting & Interview Prep (Data & AI)</strong><br>🌏 Experience living and working in 4 countries (🇯🇵 Japan, 🇮🇪 Ireland, 🇺🇸 USA, 🇦🇺 Australia)<br>Feel free to reach out via Email / X DM / Facebook'},
+      servicesP2:{th:'🎯 <strong>รับปรึกษา & เตรียมสัมภาษณ์ Global Tech (Data & AI)</strong>',en:'🎯 <strong>Global Tech Consulting & Interview Prep (Data & AI)</strong>'},
+      servicesP3:{th:'🌏 มีประสบการณ์ใช้ชีวิตและทำงานใน 4 ประเทศ (🇯🇵 ญี่ปุ่น, 🇮🇪 ไอร์แลนด์, 🇺🇸 อเมริกา, 🇦🇺 ออสเตรเลีย)',en:'🌏 Experience living and working in 4 countries (🇯🇵 Japan, 🇮🇪 Ireland, 🇺🇸 USA, 🇦🇺 Australia)'},
       tryIt:{th:'🔗 ลองใช้งาน',en:'🔗 Try it out'},
       comingSoon:{th:'🔜 Coming Soon',en:'🔜 Coming Soon'},
       skillsH:{th:'เทคโนโลยีและเครื่องมือ',en:'Technologies & Tools'},
@@ -1071,17 +1199,19 @@
       lang=l;
       document.getElementById('langBtn').textContent=l==='th'?'EN':'TH';
       document.querySelector('.subtitle').innerHTML=T.subtitle[l];
-      var aboutCard=document.querySelectorAll('.about-card');
-      // About section
-      var ac=aboutCard[0];
-      ac.querySelector('h2').innerHTML=T.aboutH[l];
-      var ps=ac.querySelectorAll('p');
-      ps[0].innerHTML=T.aboutP1[l];
-      ps[1].innerHTML=T.aboutP2[l];
-      ps[2].innerHTML=T.aboutP3[l];
+      var aboutCards=document.querySelectorAll('.about-card');
+      // Welcome section (index 0)
+      var welcomeSection=aboutCards[0];
+      welcomeSection.querySelector('h2').innerHTML=T.welcomeH[l];
+      welcomeSection.querySelector('p').innerHTML=T.welcomeP[l];
+      // About Us section (index 1)
+      var aboutSection=aboutCards[1];
+      aboutSection.querySelector('h2').innerHTML=T.aboutUsH[l];
+      document.getElementById('about-current').innerHTML=T.aboutCurrent[l];
+      document.getElementById('about-exp').innerHTML=T.aboutExp[l];
       document.getElementById('about-edu').innerHTML=T.aboutEdu[l];
       document.getElementById('about-writing').innerHTML=T.aboutWriting[l];
-      ac.querySelector('h3').innerHTML=T.topSkills[l];
+      aboutSection.querySelector('h3').innerHTML=T.topSkills[l];
       // Projects
       document.querySelector('.section-header h2').innerHTML=T.projectsH[l];
       var cards=document.querySelectorAll('.topic-card');
@@ -1089,13 +1219,11 @@
       cards.forEach(function(c,i){if(pTexts[i])c.querySelector('p').innerHTML=pTexts[i][l]});
       document.querySelectorAll('.project-link').forEach(function(a){a.textContent=T.tryIt[l]});
       document.querySelectorAll('.coming-soon').forEach(function(s){s.textContent=T.comingSoon[l]});
-      // Services
-      var svc=aboutCard[1];
-      svc.querySelector('h2').innerHTML=T.servicesH[l];
-      svc.querySelectorAll('p')[1].innerHTML=T.servicesP2[l];
+      // Services (index 2)
+      var servicesSection=aboutCards[2];
+      servicesSection.querySelector('h2').innerHTML=T.servicesH[l];
       // Skills
       document.querySelector('.skills-card h2').innerHTML=T.skillsH[l];
-      // Certs h2 — keep same
       // Contact
       document.querySelector('.contact-card h2').innerHTML=T.contactH[l];
       document.querySelector('.contact-card p').innerHTML=T.contactP[l];
